@@ -1,5 +1,7 @@
 # PDF 解析指南
 
+[English](README_EN.md) | 中文
+
 ## 概述
 
 PDF（Portable Document Format）是一种广泛使用的文档格式，本指南涵盖 PDF 文档解析的最佳实践。

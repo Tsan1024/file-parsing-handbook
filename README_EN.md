@@ -15,19 +15,19 @@ A comprehensive handbook collecting popular GitHub open-source solutions for all
 
 | Type | Description | Guide |
 |------|-------------|-------|
-| PDF | PDF document parsing, table extraction, OCR processing | [Guide →](parsing-guides/pdf/) |
-| Word | Word document reading, template processing | [Guide →](parsing-guides/word/) |
-| Excel | Excel spreadsheet data reading, formula processing | [Guide →](parsing-guides/excel/) |
-| PPT | PowerPoint slide content extraction | [Guide →](parsing-guides/ppt/) |
-| Images | Image text recognition (OCR), scanned document processing | [Guide →](parsing-guides/images/) |
-| Markdown | Markdown document parsing, format conversion | [Guide →](parsing-guides/markdown/) |
-| HTML | HTML web page content extraction, parsing | [Guide →](parsing-guides/html/) |
-| XML | XML document parsing, data extraction | [Guide →](parsing-guides/xml/) |
-| YAML | YAML configuration file parsing | [Guide →](parsing-guides/yaml/) |
-| RTF | Rich Text Format document parsing | [Guide →](parsing-guides/rtf/) |
-| Email | Email (EML/MSG) content extraction | [Guide →](parsing-guides/email/) |
-| Archive | Archive (ZIP/TAR) parsing | [Guide →](parsing-guides/archive/) |
-| Plain Text | CSV, JSON, TXT and other plain text processing | [Guide →](parsing-guides/plain-text/) |
+| PDF | PDF document parsing, table extraction, OCR processing | [Guide →](parsing-guides/pdf/README_EN.md) |
+| Word | Word document reading, template processing | [Guide →](parsing-guides/word/README_EN.md) |
+| Excel | Excel spreadsheet data reading, formula processing | [Guide →](parsing-guides/excel/README_EN.md) |
+| PPT | PowerPoint slide content extraction | [Guide →](parsing-guides/ppt/README_EN.md) |
+| Images | Image text recognition (OCR), scanned document processing | [Guide →](parsing-guides/images/README_EN.md) |
+| Markdown | Markdown document parsing, format conversion | [Guide →](parsing-guides/markdown/README_EN.md) |
+| HTML | HTML web page content extraction, parsing | [Guide →](parsing-guides/html/README_EN.md) |
+| XML | XML document parsing, data extraction | [Guide →](parsing-guides/xml/README_EN.md) |
+| YAML | YAML configuration file parsing | [Guide →](parsing-guides/yaml/README_EN.md) |
+| RTF | Rich Text Format document parsing | [Guide →](parsing-guides/rtf/README_EN.md) |
+| Email | Email (EML/MSG) content extraction | [Guide →](parsing-guides/email/README_EN.md) |
+| Archive | Archive (ZIP/TAR) parsing | [Guide →](parsing-guides/archive/README_EN.md) |
+| Plain Text | CSV, JSON, TXT and other plain text processing | [Guide →](parsing-guides/plain-text/README_EN.md) |
 
 ### Other Resources
 - [Tool Reviews](tool-reviews/) - Comparisons and reviews of various parsing tools and libraries

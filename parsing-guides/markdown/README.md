@@ -1,5 +1,7 @@
 # Markdown 解析指南
 
+[English](README_EN.md) | 中文
+
 ## 概述
 
 Markdown 是轻量级标记语言，广泛用于文档编写。

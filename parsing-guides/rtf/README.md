@@ -1,5 +1,7 @@
 # RTF 解析指南
 
+[English](README_EN.md) | 中文
+
 ## 概述
 
 RTF（Rich Text Format）是微软开发的富文本文档格式。

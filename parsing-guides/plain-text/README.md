@@ -1,5 +1,7 @@
 # 纯文本解析指南
 
+[English](README_EN.md) | 中文
+
 ## 概述
 
 纯文本文件（CSV, JSON, TXT）是最基础的数据格式。

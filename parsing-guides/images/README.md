@@ -1,5 +1,7 @@
 # 图片解析指南
 
+[English](README_EN.md) | 中文
+
 ## 概述
 
 图片文件（JPG, PNG, TIFF 等）的文字识别和扫描件处理。

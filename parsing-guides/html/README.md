@@ -1,5 +1,7 @@
 # HTML 解析指南
 
+[English](README_EN.md) | 中文
+
 ## 概述
 
 HTML 是网页的标准标记语言。

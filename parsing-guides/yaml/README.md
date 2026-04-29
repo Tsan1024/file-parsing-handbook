@@ -1,5 +1,7 @@
 # YAML 解析指南
 
+[English](README_EN.md) | 中文
+
 ## 概述
 
 YAML 是人类友好的数据序列化格式，广泛用于配置文件。

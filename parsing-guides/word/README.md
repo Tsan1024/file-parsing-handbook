@@ -1,5 +1,7 @@
 # Word 文档解析指南
 
+[English](README_EN.md) | 中文
+
 ## 概述
 
 Word 文档（.docx）是 Microsoft Office 的核心文档格式。

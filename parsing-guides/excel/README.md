@@ -1,5 +1,7 @@
 # Excel 解析指南
 
+[English](README_EN.md) | 中文
+
 ## 概述
 
 Excel 文档（.xlsx, .xls）是电子表格的标准格式。
