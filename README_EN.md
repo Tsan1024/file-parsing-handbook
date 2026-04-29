@@ -1,5 +1,7 @@
 # File Parsing Handbook
 
+English | [中文](README.md)
+
 A comprehensive handbook collecting popular GitHub open-source solutions for all types of file parsing, covering PDF, Word, Excel, scanned files, images, TXT, etc., with layout analysis, text & table extraction practices.
 
 ## Table of Contents

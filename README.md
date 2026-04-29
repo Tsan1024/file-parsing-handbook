@@ -1,5 +1,7 @@
 # File Parsing Handbook
 
+[English](README_EN.md) | 中文
+
 一个全面的文件解析手册，收集了各类文件解析的流行开源解决方案，涵盖 PDF、Word、Excel、扫描文件、图片、TXT 等多种格式，包含布局分析、文本和表格提取的实践方法。
 
 ## 目录结构
