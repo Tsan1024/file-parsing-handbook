@@ -1,0 +1,7 @@
+{
+  "database": "dolt",
+  "backend": "dolt",
+  "dolt_mode": "embedded",
+  "dolt_database": "file_parsing_handbook",
+  "project_id": "4a080678-91fa-4ab7-8977-9aa8fcca4543"
+}
