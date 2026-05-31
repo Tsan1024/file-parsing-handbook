@@ -4,33 +4,6 @@ English | [中文](README.md)
 
 ## Overview
 
-PDF (Portable Document Format) is a widely used document format. This guide covers best practices for PDF document parsing.
-
-## Contents
-
-- [Basic Text Extraction](basic-extraction.md)
-- [Table Extraction](table-extraction.md)
-- [Layout Analysis](layout-analysis.md)
-- [Scanned PDF/OCR Processing](ocr-handling.md)
-
-## Common Tools
-
-| Tool | Language | Description |
-|------|----------|-------------|
-| PyPDF2 | Python | Basic PDF reading and text extraction |
-| pdfplumber | Python | Table extraction, layout analysis |
-| Camelot | Python | Advanced table extraction |
-| pdf.js | JavaScript | Browser-side PDF parsing |
-
-## Example Code
-
-See the [examples/](examples/) directory for runnable examples.
-# PDF Parsing Guide
-
-English | [中文](README.md)
-
-## Overview
-
 PDF (Portable Document Format) is one of the most widely used document formats, but it was designed for "print output" rather than "data exchange," making PDF parsing a persistent challenge. This guide covers two major approaches: traditional protocol-based parsing and the two-stage VLM approach.
 
 ## Contents
@@ -130,7 +103,7 @@ PDF Page → Render to Image (Stage 1) → VLM Analysis (Stage 2) → Structured
 
 ```python
 from pdf2image import convert_from_path
-import base64
+import base64, io
 from openai import OpenAI
 
 client = OpenAI()
@@ -139,8 +112,10 @@ client = OpenAI()
 images = convert_from_path("document.pdf", dpi=200)
 
 for i, img in enumerate(images):
-    # Encode image
-    img_base64 = base64.b64encode(img.tobytes()).decode()
+    # Encode as PNG base64
+    buf = io.BytesIO()
+    img.save(buf, format="PNG")
+    img_base64 = base64.b64encode(buf.getvalue()).decode()
 
     # Stage 2: VLM analysis
     response = client.chat.completions.create(

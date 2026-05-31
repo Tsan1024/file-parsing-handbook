@@ -101,7 +101,7 @@ For highly complex Word documents (multi-column layouts, embedded charts, WordAr
 #### 3.1 Core Pipeline
 
 ```
-DOCX to Render to Images to VLM Analysis to Structured Output
+DOCX → Render to Images → VLM Analysis → Structured Output
 ```
 
 #### 3.2 Example Implementation

@@ -4,33 +4,6 @@
 
 ## 概述
 
-PDF（Portable Document Format）是一种广泛使用的文档格式，本指南涵盖 PDF 文档解析的最佳实践。
-
-## 内容
-
-- [基础文本提取](basic-extraction.md)
-- [表格提取](table-extraction.md)
-- [布局分析](layout-analysis.md)
-- [扫描 PDF/OCR 处理](ocr-handling.md)
-
-## 常用工具
-
-| 工具 | 语言 | 说明 |
-|------|------|------|
-| PyPDF2 | Python | 基础 PDF 读取和文本提取 |
-| pdfplumber | Python | 表格提取、布局分析 |
-| Camelot | Python | 高级表格提取 |
-| pdf.js | JavaScript | 浏览器端 PDF 解析 |
-
-## 示例代码
-
-查看 [examples/](examples/) 目录获取可运行示例。
-# PDF 解析指南
-
-[English](README_EN.md) | 中文
-
-## 概述
-
 PDF（Portable Document Format）是最广泛使用的文档格式之一，但其设计初衷是「打印输出」而非「数据交换」，因此 PDF 解析一直是文件处理领域的难点。本指南涵盖两大类主流解析方案：传统协议解析和两阶段 VLM 方案。
 
 ## 内容
@@ -130,7 +103,7 @@ PDF 页面 → 渲染为图像 (Stage 1) → VLM 分析 (Stage 2) → 结构化�
 
 ```python
 from pdf2image import convert_from_path
-import base64
+import base64, io
 from openai import OpenAI
 
 client = OpenAI()
@@ -139,8 +112,10 @@ client = OpenAI()
 images = convert_from_path("document.pdf", dpi=200)
 
 for i, img in enumerate(images):
-    # 图像编码
-    img_base64 = base64.b64encode(img.tobytes()).decode()
+    # 图像编码为 PNG base64
+    buf = io.BytesIO()
+    img.save(buf, format="PNG")
+    img_base64 = base64.b64encode(buf.getvalue()).decode()
 
     # Stage 2: VLM 分析
     response = client.chat.completions.create(
