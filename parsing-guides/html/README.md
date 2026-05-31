@@ -6,12 +6,6 @@
 
 HTML 是网页的标准标记语言。
 
-## 内容
-
-- [基础解析](basic-parsing.md)
-- [内容提取](content-extraction.md)
-- [表单处理](form-handling.md)
-
 ## 常用工具
 
 | 工具 | 语言 | 说明 |

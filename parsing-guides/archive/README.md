@@ -6,12 +6,6 @@
 
 压缩包（ZIP, TAR, RAR）包含多个文件和目录。
 
-## 内容
-
-- [ZIP 解析](zip-parsing.md)
-- [TAR 解析](tar-parsing.md)
-- [内存优化处理](memory-optimization.md)
-
 ## 常用工具
 
 | 工具 | 语言 | 说明 |

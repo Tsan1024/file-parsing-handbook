@@ -4,12 +4,6 @@
 
 Email files (EML, MSG) contain email headers, body content, and attachments.
 
-## Contents
-
-- [EML Parsing](eml-parsing.md)
-- [MSG Parsing](msg-parsing.md)
-- [Attachment Extraction](attachment-extraction.md)
-
 ## Common Tools
 
 | Tool | Language | Description |

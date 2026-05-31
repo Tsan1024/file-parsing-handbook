@@ -6,12 +6,6 @@ English | [中文](README.md)
 
 Word documents (.docx) are the core document format of Microsoft Office, built on the Open XML standard. A .docx file is essentially a ZIP archive containing multiple XML files. This guide covers common DOCX parsing approaches and tools.
 
-## Contents
-
-- [Basic Reading](basic-reading.md)
-- [Template Processing](template-handling.md)
-- [Format Conversion](conversion.md)
-
 ## Parsing Approaches
 
 ### 1. Protocol-Level Parsing (Direct XML Access)

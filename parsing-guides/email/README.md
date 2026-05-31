@@ -6,12 +6,6 @@
 
 邮件文件（EML, MSG）包含邮件头、正文和附件信息。
 
-## 内容
-
-- [EML 解析](eml-parsing.md)
-- [MSG 解析](msg-parsing.md)
-- [附件提取](attachment-extraction.md)
-
 ## 常用工具
 
 | 工具 | 语言 | 说明 |

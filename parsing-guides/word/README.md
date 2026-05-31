@@ -6,12 +6,6 @@
 
 Word 文档（.docx）是 Microsoft Office 的核心文档格式，底层基于 Open XML 标准，本质是一个 ZIP 压缩包内包含多个 XML 文件。本指南涵盖常见的 DOCX 解析方法与工具。
 
-## 内容
-
-- [基础读取](basic-reading.md)
-- [模板处理](template-handling.md)
-- [格式转换](conversion.md)
-
 ## 解析方法总览
 
 ### 一、协议级解析（直接操作 XML）

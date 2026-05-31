@@ -6,13 +6,6 @@
 
 PDF（Portable Document Format）是最广泛使用的文档格式之一，但其设计初衷是「打印输出」而非「数据交换」，因此 PDF 解析一直是文件处理领域的难点。本指南涵盖两大类主流解析方案：传统协议解析和两阶段 VLM 方案。
 
-## 内容
-
-- [基础文本提取](basic-extraction.md)
-- [表格提取](table-extraction.md)
-- [布局分析](layout-analysis.md)
-- [扫描 PDF/OCR 处理](ocr-handling.md)
-
 ## 解析方案总览
 
 ### 一、普通协议解析

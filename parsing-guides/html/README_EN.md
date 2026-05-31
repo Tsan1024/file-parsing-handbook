@@ -4,12 +4,6 @@
 
 HTML is the standard markup language for web pages.
 
-## Contents
-
-- [Basic Parsing](basic-parsing.md)
-- [Content Extraction](content-extraction.md)
-- [Form Processing](form-handling.md)
-
 ## Common Tools
 
 | Tool | Language | Description |

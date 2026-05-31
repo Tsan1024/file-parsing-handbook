@@ -6,12 +6,6 @@
 
 YAML 是人类友好的数据序列化格式，广泛用于配置文件。
 
-## 内容
-
-- [基础解析](basic-parsing.md)
-- [配置管理](config-management.md)
-- [多文档处理](multi-doc.md)
-
 ## 常用工具
 
 | 工具 | 语言 | 说明 |

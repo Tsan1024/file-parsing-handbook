@@ -6,13 +6,6 @@
 
 图片文件（JPG, PNG, TIFF 等）的文字识别和扫描件处理。
 
-## 内容
-
-- [OCR 基础](ocr-basics.md)
-- [文字提取](text-extraction.md)
-- [预处理技巧](preprocessing.md)
-- [扫描文档处理](scanned-docs.md)
-
 ## 常用工具
 
 | 工具 | 语言 | 说明 |

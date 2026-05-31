@@ -4,12 +4,6 @@
 
 YAML is a human-friendly data serialization format, widely used for configuration files.
 
-## Contents
-
-- [Basic Parsing](basic-parsing.md)
-- [Configuration Management](config-management.md)
-- [Multi-document Processing](multi-doc.md)
-
 ## Common Tools
 
 | Tool | Language | Description |

@@ -6,12 +6,6 @@
 
 Excel 文档（.xlsx, .xls）是电子表格的标准格式。
 
-## 内容
-
-- [数据读取](data-reading.md)
-- [公式处理](formula-handling.md)
-- [大文件处理](large-files.md)
-
 ## 常用工具
 
 | 工具 | 语言 | 说明 |

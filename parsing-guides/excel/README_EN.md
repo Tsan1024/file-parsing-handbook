@@ -4,12 +4,6 @@
 
 Excel documents (.xlsx, .xls) are the standard format for spreadsheets.
 
-## Contents
-
-- [Data Reading](data-reading.md)
-- [Formula Processing](formula-handling.md)
-- [Large File Handling](large-files.md)
-
 ## Common Tools
 
 | Tool | Language | Description |

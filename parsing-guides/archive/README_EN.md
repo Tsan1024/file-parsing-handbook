@@ -4,12 +4,6 @@
 
 Archive files (ZIP, TAR, RAR) contain multiple files and directories.
 
-## Contents
-
-- [ZIP Parsing](zip-parsing.md)
-- [TAR Parsing](tar-parsing.md)
-- [Memory-Optimized Processing](memory-optimization.md)
-
 ## Common Tools
 
 | Tool | Language | Description |

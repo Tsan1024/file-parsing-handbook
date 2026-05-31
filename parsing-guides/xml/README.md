@@ -6,12 +6,6 @@
 
 XML 是可扩展标记语言，广泛用于数据交换和配置。
 
-## 内容
-
-- [基础解析](basic-parsing.md)
-- [数据提取](data-extraction.md)
-- [XPath 查询](xpath-queries.md)
-
 ## 常用工具
 
 | 工具 | 语言 | 说明 |

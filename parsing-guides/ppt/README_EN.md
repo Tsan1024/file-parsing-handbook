@@ -4,12 +4,6 @@
 
 PowerPoint slides (.pptx) are the standard format for presentations.
 
-## Contents
-
-- [Slide Content Extraction](content-extraction.md)
-- [Shapes and Text Processing](shapes-text.md)
-- [Image Extraction](image-extraction.md)
-
 ## Common Tools
 
 | Tool | Language | Description |

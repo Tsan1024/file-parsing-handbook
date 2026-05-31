@@ -4,13 +4,6 @@
 
 Plain text files (CSV, JSON, TXT) are the most basic data formats.
 
-## Contents
-
-- [CSV Processing](csv-json.md)
-- [JSON Processing](json-handling.md)
-- [Regex Patterns](regex-patterns.md)
-- [Encoding Handling](encoding-handling.md)
-
 ## Common Tools
 
 | Tool | Language | Description |

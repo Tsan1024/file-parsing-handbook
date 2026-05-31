@@ -6,13 +6,6 @@ English | [中文](README.md)
 
 PDF (Portable Document Format) is one of the most widely used document formats, but it was designed for "print output" rather than "data exchange," making PDF parsing a persistent challenge. This guide covers two major approaches: traditional protocol-based parsing and the two-stage VLM approach.
 
-## Contents
-
-- [Basic Text Extraction](basic-extraction.md)
-- [Table Extraction](table-extraction.md)
-- [Layout Analysis](layout-analysis.md)
-- [Scanned PDF/OCR Processing](ocr-handling.md)
-
 ## Parsing Approaches
 
 ### 1. Protocol-Based Parsing

@@ -6,12 +6,6 @@
 
 RTF（Rich Text Format）是微软开发的富文本文档格式。
 
-## 内容
-
-- [基础解析](basic-parsing.md)
-- [文本提取](text-extraction.md)
-- [格式转换](format-conversion.md)
-
 ## 常用工具
 
 | 工具 | 语言 | 说明 |
