@@ -9,5 +9,3 @@ RTF (Rich Text Format) is a rich text document format developed by Microsoft.
 | Tool | Language | Description |
 |------|----------|-------------|
 | striprtf | Python | RTF to Plain Text conversion |
-| pyth | Python | RTF parsing |
-.

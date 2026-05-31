@@ -2,7 +2,7 @@
 
 ## Overview
 
-Excel documents (.xlsx, .xls) are the standard format for spreadsheets.
+Excel documents (.xlsx) are the standard format for spreadsheets. Legacy .xls format requires dedicated libraries such as xlrd.
 
 ## Common Tools
 

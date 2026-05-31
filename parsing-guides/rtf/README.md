@@ -11,4 +11,3 @@ RTF（Rich Text Format）是微软开发的富文本文档格式。
 | 工具 | 语言 | 说明 |
 |------|------|------|
 | striprtf | Python | RTF 转 Plain Text |
-| pyth | Python | RTF 解析 |

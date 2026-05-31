@@ -12,4 +12,4 @@
 |------|------|------|
 | email module | Python | Python 内置邮件处理 |
 | msg-parser | Python | Outlook MSG 文件解析 |
-| java.mail | Java | Java 邮件处理 |
+| Jakarta Mail (javax.mail) | Java | Java 邮件处理 |

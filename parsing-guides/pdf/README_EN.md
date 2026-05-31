@@ -4,7 +4,7 @@ English | [中文](README.md)
 
 ## Overview
 
-PDF (Portable Document Format) is one of the most widely used document formats, but it was designed for "print output" rather than "data exchange," making PDF parsing a persistent challenge. This guide covers two major approaches: traditional protocol-based parsing and the two-stage VLM approach.
+PDF (Portable Document Format) is one of the most widely used document formats, but it was designed for "print output" rather than "data exchange," making PDF parsing a persistent challenge. This guide covers two major approaches: traditional protocol-based parsing and vision-model-based approaches.
 
 ## Parsing Approaches
 
@@ -63,25 +63,29 @@ For scanned PDFs (image-only), OCR is required before text extraction.
 
 **Recommended pipeline**: pdf2image → layout detection → per-region OCR → structured output.
 
-### 2. Two-Stage VLM Approach
+### 2. Vision-Model-Based Approaches
 
-A modern paradigm: render PDF pages as images, then use Vision Language Models (VLMs) to directly understand page content and produce structured output. Especially effective for complex layouts, mixed text/image content, and scenarios requiring semantic understanding.
+Leverage Vision Language Models (VLMs) to understand PDF page content. Especially effective for complex layouts, mixed text/image content, and scenarios requiring semantic understanding. Approaches are divided by whether layout detection is performed explicitly.
 
-#### 2.1 Core Pipeline
+#### 2.1 End-to-End VLM
+
+The simplest VLM approach: render PDF pages as high-resolution images, feed the entire page to a VLM, and let the model understand the layout and extract content in one pass.
+
+**Core pipeline**:
 
 ```
-PDF Page → Render to Image (Stage 1) → VLM Analysis (Stage 2) → Structured Output (Markdown/JSON)
+PDF Page → Render to Image → VLM Full-Page Analysis → Structured Output (Markdown/JSON)
 ```
 
-**Stage 1 — Page Rendering**: Convert PDF pages to high-resolution images.
+**Page Rendering Tools**:
 
 | Tool | Description |
 |------|-------------|
-| pdf2image | Poppler-based, most common PDF→image tool in Python |
+| pdf2image | Poppler-based, most common PDF-to-image tool in Python |
 | PyMuPDF | Built-in page.get_pixmap(), no extra dependencies |
 | ImageMagick | CLI approach, good for batch processing |
 
-**Stage 2 — VLM Analysis**: Feed images to a Vision Language Model for content understanding and extraction.
+**Common VLM Models**:
 
 | Model/Service | Characteristics |
 |---------------|-----------------|
@@ -89,10 +93,8 @@ PDF Page → Render to Image (Stage 1) → VLM Analysis (Stage 2) → Structured
 | Claude 3.5 Sonnet / Opus | Long context, suitable for multi-page documents |
 | Gemini 2.5 Flash / Pro | High throughput, low cost, native multimodal |
 | Qwen-VL | Open-source, locally deployable |
-| Molmo (Allen AI) | Open-source, optimized for document understanding |
-| Docling (IBM) | VLM solution specialized for document conversion |
 
-#### 2.2 Example Implementation
+**Example**:
 
 ```python
 from pdf2image import convert_from_path
@@ -101,16 +103,16 @@ from openai import OpenAI
 
 client = OpenAI()
 
-# Stage 1: Render to images
+# Render to images
 images = convert_from_path("document.pdf", dpi=200)
 
-for i, img in enumerate(images):
+for img in images:
     # Encode as PNG base64
     buf = io.BytesIO()
     img.save(buf, format="PNG")
     img_base64 = base64.b64encode(buf.getvalue()).decode()
 
-    # Stage 2: VLM analysis
+    # End-to-end VLM analysis
     response = client.chat.completions.create(
         model="gpt-4o",
         messages=[{
@@ -124,22 +126,52 @@ for i, img in enumerate(images):
     print(response.choices[0].message.content)
 ```
 
-#### 2.3 Approach Comparison
+**Pros & cons**: Simple to implement, one API call per page. Limited by context window for very large pages or multi-page documents, and no fine-grained control per region.
 
-| Dimension | Protocol-Based Parsing | Two-Stage VLM |
-|-----------|----------------------|---------------|
-| Accuracy | High for structured PDFs, moderate for complex layouts | Generally high, good image-text understanding |
-| Speed | Very fast (ms/page) | Slower (seconds/page) |
-| Cost | Free (open-source libraries) | API: per-token billing; local models: GPU required |
-| Table Handling | Depends on tool algorithm, good for bordered tables | Semantic-level understanding, good for complex tables |
-| Scanned Documents | Requires additional OCR step | Natively supported (image input) |
-| Multilingual Mixed | Depends on OCR engine | VLM-native multilingual |
-| Offline Capable | Fully offline | API requires network; open-source models run offline |
+#### 2.2 Two-Stage: Layout Detection → Regional Extraction
+
+This is the classic two-stage paradigm in document parsing — separating "where is the content?" from "what is the content?", allowing each stage to use the most suitable model.
+
+| Stage | Goal | Methods |
+|-------|------|---------|
+| **Stage 1: Layout Detection** | Identify all element regions on the page (headings, paragraphs, tables, figures, headers, footers, formulas, etc.) with bounding boxes and types | Rule-based (pdfplumber coordinate analysis), deep learning detection models (layoutparser, DocTR, Surya), lightweight object detection (YOLO-based) |
+| **Stage 2: Regional Extraction** | For each detected region, select the best model for content extraction and structuring | Text regions → VLM or OCR; Table regions → table-specific VLM or Camelot/Tabula; Figure regions → VLM description or OCR; Formula regions → LaTeX conversion models |
+
+**Core pipeline**:
+
+```
+PDF Page → Render to Image → Layout Detection (Stage 1) → Regional Extraction (Stage 2) → Structured Output
+```
+
+**Two-Stage vs End-to-End**:
+
+| Dimension | End-to-End VLM | Two-Stage (Layout→Extraction) |
+|-----------|---------------|-------------------------------|
+| Complexity | Low, single call | Medium, requires model composition |
+| Flexibility | Relies on VLM judgment | Best strategy per region |
+| Table Accuracy | Model-dependent, may vary | Dedicated table extractors |
+| Large Pages | Limited by context window | Region-level, no limit |
+| Cost Control | Fixed token cost per page | Can skip low-value regions |
 
 **Recommendations**:
-- Batch processing structured PDFs → Protocol-based parsing (PyMuPDF + Camelot)
-- Complex layouts, scanned documents, semantic extraction needed → Two-stage VLM
-- Mixed scenarios → Quick filtering with protocol parsing, VLM for difficult pages
+- Quick prototypes, simple documents → End-to-end VLM
+- Production, high precision, complex tables → Two-stage approach
+- Hybrid: end-to-end for rough pass + two-stage for refinement
+
+## Overall Comparison
+
+| Dimension | Protocol-Based | End-to-End VLM | Two-Stage (Layout→Extraction) |
+|-----------|---------------|----------------|-------------------------------|
+| Accuracy | High for structured PDFs, moderate otherwise | High overall, good image-text | Highest, optimal per region |
+| Speed | Very fast (ms/page) | Slower (seconds/page) | Slower, but optimizable |
+| Cost | Free (open-source) | API per-token billing | Mix open-source + API |
+| Scanned Docs | Requires OCR step | Native support | Native support |
+| Offline | Fully offline | API requires network | Fully offline possible (open-source detection + VLM) |
+
+**Recommended Strategy**:
+- Batch structured PDFs → Protocol-based (PyMuPDF + Camelot)
+- Complex layouts, semantic understanding needed → Two-stage (layout detection + VLM)
+- Quick validation, prototyping → End-to-end VLM
 
 ## Common Tools Quick Reference
 
@@ -148,8 +180,7 @@ for i, img in enumerate(images):
 | PyMuPDF | Python | Protocol | High-speed text/image extraction |
 | pdfplumber | Python | Protocol | Precise coordinate-level control |
 | Camelot | Python | Protocol | Table extraction specialist |
-| unstructured | Python | Hybrid | Unified document parsing pipeline |
-| pdf2image + GPT-4o | Python | VLM Two-Stage | Semantic-level understanding |
+| layoutparser | Python | Layout Detection | Deep learning layout analysis |
+| Surya | Python | Layout+OCR | Next-gen open-source solution |
 | PaddleOCR | Python | OCR | Excellent for Chinese scenarios |
-| Surya | Python | OCR/VLM | Next-gen open-source OCR |
- for runnable examples.
+| GPT-4o / Claude | API | VLM | End-to-end document understanding |

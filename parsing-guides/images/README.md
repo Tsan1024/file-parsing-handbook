@@ -13,4 +13,4 @@
 | Tesseract | C++/Python | 开源 OCR 引擎 |
 | EasyOCR | Python | 深度学习 OCR |
 | PaddleOCR | Python | 百度 OCR 框架 |
-| ABBYY | 商业 | 专业 OCR。 |
+| ABBYY | 商业 | 专业 OCR |
