@@ -12,7 +12,4 @@ Image files (JPG, PNG, TIFF, etc.) for text recognition and scanned document pro
 | EasyOCR | Python | Deep learning OCR |
 | PaddleOCR | Python | Baidu OCR framework |
 | ABBYY | Commercial | Professional OCR |
-
-## Example Code
-
-See the [examples/](examples/) directory.
+.

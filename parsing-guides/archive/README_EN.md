@@ -11,7 +11,4 @@ Archive files (ZIP, TAR, RAR) contain multiple files and directories.
 | zipfile | Python | Python built-in ZIP processing |
 | tarfile | Python | Python built-in TAR processing |
 | adm-zip | JavaScript | JavaScript ZIP processing |
-
-## Example Code
-
-See the [examples/](examples/) directory.
+.

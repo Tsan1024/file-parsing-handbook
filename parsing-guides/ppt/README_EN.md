@@ -10,7 +10,4 @@ PowerPoint slides (.pptx) are the standard format for presentations.
 |------|----------|-------------|
 | python-pptx | Python | PowerPoint reading and writing |
 | Apache POI | Java | Office document processing |
-
-## Example Code
-
-See the [examples/](examples/) directory.
+.

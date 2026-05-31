@@ -12,7 +12,4 @@ XML (Extensible Markup Language) is widely used for data exchange and configurat
 | xml.etree | Python | Python built-in XML |
 | xmltodict | Python | XML to Dict conversion |
 | JDOM | Java | Java XML processing |
-
-## Example Code
-
-See the [examples/](examples/) directory.
+.

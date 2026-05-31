@@ -14,7 +14,3 @@ HTML 是网页的标准标记语言。
 | lxml | Python | 高性能 XML/HTML 处理 |
 | Cheerio | JavaScript | jQuery 风格 HTML 解析 |
 | jsdom | JavaScript | DOM 环境 |
-
-## 示例代码
-
-查看 [examples/](examples/) 目录。

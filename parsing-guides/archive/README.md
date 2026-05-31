@@ -13,7 +13,3 @@
 | zipfile | Python | Python 内置 ZIP 处理 |
 | tarfile | Python | Python 内置 TAR 处理 |
 | adm-zip | JavaScript | JavaScript ZIP 处理 |
-
-## 示例代码
-
-查看 [examples/](examples/) 目录。

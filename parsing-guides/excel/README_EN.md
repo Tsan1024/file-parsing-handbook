@@ -12,7 +12,4 @@ Excel documents (.xlsx, .xls) are the standard format for spreadsheets.
 | pandas | Python | Data analysis and processing |
 | Apache POI | Java | Office document processing |
 | SheetJS | JavaScript | Browser-side Excel processing |
-
-## Example Code
-
-See the [examples/](examples/) directory.
+.

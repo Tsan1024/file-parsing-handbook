@@ -14,7 +14,3 @@ Excel 文档（.xlsx, .xls）是电子表格的标准格式。
 | pandas | Python | 数据分析和处理 |
 | Apache POI | Java | Office 文档处理 |
 | SheetJS | JavaScript | 浏览器端 Excel 处理 |
-
-## 示例代码
-
-查看 [examples/](examples/) 目录。

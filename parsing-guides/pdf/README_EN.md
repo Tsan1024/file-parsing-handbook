@@ -152,7 +152,4 @@ for i, img in enumerate(images):
 | pdf2image + GPT-4o | Python | VLM Two-Stage | Semantic-level understanding |
 | PaddleOCR | Python | OCR | Excellent for Chinese scenarios |
 | Surya | Python | OCR/VLM | Next-gen open-source OCR |
-
-## Example Code
-
-See the [examples/](examples/) directory for runnable examples.
+ for runnable examples.

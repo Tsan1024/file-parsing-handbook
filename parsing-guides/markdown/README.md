@@ -13,7 +13,3 @@ Markdown 是轻量级标记语言，广泛用于文档编写。
 | python-markdown | Python | Markdown 解析和渲染 |
 | markdown-it | JavaScript | 高性能 Markdown 解析 |
 | remark | JavaScript | Markdown AST 处理 |
-
-## 示例代码
-
-查看 [examples/](examples/) 目录。

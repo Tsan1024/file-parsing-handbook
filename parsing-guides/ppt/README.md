@@ -12,7 +12,3 @@ PowerPoint 幻灯片（.pptx）是演示文稿的标准格式。
 |------|------|------|
 | python-pptx | Python | PowerPoint 读写 |
 | Apache POI | Java | Office 文档处理 |
-
-## 示例代码
-
-查看 [examples/](examples/) 目录。

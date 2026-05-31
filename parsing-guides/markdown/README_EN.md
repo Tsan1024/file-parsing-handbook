@@ -11,7 +11,4 @@ Markdown is a lightweight markup language widely used for document writing.
 | python-markdown | Python | Markdown parsing and rendering |
 | markdown-it | JavaScript | High-performance Markdown parsing |
 | remark | JavaScript | Markdown AST processing |
-
-## Example Code
-
-See the [examples/](examples/) directory.
+.

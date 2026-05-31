@@ -169,7 +169,3 @@ for img in images:
 | mammoth | Python/JS/Java | 格式转换 | Word→HTML/Markdown 专业户 |
 | libreoffice-headless | CLI | 渲染/转换 | 批量转换和图像渲染 |
 | GPT-4o / Claude | API | VLM | 语义级文档理解 |
-
-## 示例代码
-
-查看 [examples/](examples/) 目录。

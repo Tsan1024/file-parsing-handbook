@@ -169,7 +169,4 @@ for img in images:
 | mammoth | Python/JS/Java | Format Conversion | Word-to-HTML/Markdown specialist |
 | libreoffice-headless | CLI | Rendering/Conversion | Batch conversion and image rendering |
 | GPT-4o / Claude | API | VLM | Semantic-level document understanding |
-
-## Example Code
-
-See the [examples/](examples/) directory.
+.

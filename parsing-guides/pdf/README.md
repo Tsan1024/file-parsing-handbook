@@ -152,7 +152,3 @@ for i, img in enumerate(images):
 | pdf2image + GPT-4o | Python | VLM 两阶段 | 语义级理解 |
 | PaddleOCR | Python | OCR | 中文场景优秀 |
 | Surya | Python | OCR/VLM | 新一代开源 OCR |
-
-## 示例代码
-
-查看 [examples/](examples/) 目录获取可运行示例。

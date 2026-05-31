@@ -13,7 +13,3 @@ YAML 是人类友好的数据序列化格式，广泛用于配置文件。
 | PyYAML | Python | YAML 解析和序列化 |
 | ruamel.yaml | Python | YAML 保留注释处理 |
 | js-yaml | JavaScript | JavaScript YAML |
-
-## 示例代码
-
-查看 [examples/](examples/) 目录。

@@ -12,7 +12,4 @@ Plain text files (CSV, JSON, TXT) are the most basic data formats.
 | json module | Python | Python built-in JSON processing |
 | pandas | Python | Data analysis and processing |
 | chardet | Python | Encoding detection |
-
-## Example Code
-
-See the [examples/](examples/) directory.
+.

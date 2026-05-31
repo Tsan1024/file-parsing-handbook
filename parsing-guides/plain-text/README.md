@@ -14,7 +14,3 @@
 | json module | Python | Python 内置 JSON 处理 |
 | pandas | Python | 数据分析和处理 |
 | chardet | Python | 编码检测 |
-
-## 示例代码
-
-查看 [examples/](examples/) 目录。

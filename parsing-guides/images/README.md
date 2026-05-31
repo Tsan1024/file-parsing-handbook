@@ -14,7 +14,3 @@
 | EasyOCR | Python | 深度学习 OCR |
 | PaddleOCR | Python | 百度 OCR 框架 |
 | ABBYY | 商业 | 专业 OCR。 |
-
-## 示例代码
-
-查看 [examples/](examples/) 目录。
