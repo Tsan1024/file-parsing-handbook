@@ -134,7 +134,7 @@ for img in images:
 
 | 阶段 | 目标 | 方法 |
 |------|------|------|
-| **第一阶段：布局检测** | 识别页面上的各类元素区域（标题、正文段落、表格、图片、页眉页脚、公式等），输出每个区域的边界框和类型 | 传统规则（pdfplumber 坐标分析）、深度学习检测模型（layoutparser、DocTR、Surya）、轻量级目标检测（YOLO-based） |
+| **第一阶段：布局检测** | 识别页面上的各类元素区域（标题、正文段落、表格、图片、页眉页脚、公式等），输出每个区域的边界框和类型 | 传统规则（pdfplumber 坐标分析）、深度学习检测模型（layoutparser、DocTR、Surya）、轻量级目标检测（YOLO-based）、MinerU（doclayout-yolo） |
 | **第二阶段：区域提取** | 对每个检测到的区域，选择最合适的模型进行内容提取和结构化 | 文本区域 → VLM 或 OCR 提取；表格区域 → 表格专用 VLM 或 Camelot/Tabula；图片区域 → VLM 描述或 OCR；公式区域 → LaTeX 转换模型 |
 
 **核心流程**：
@@ -142,6 +142,16 @@ for img in images:
 ```
 PDF 页面 → 渲染为图像 → 布局检测（Stage 1）→ 按区域提取（Stage 2）→ 结构化输出
 ```
+
+
+**代表性工具：MinerU**
+
+MinerU 是两阶段方案的开源标杆实现，由 OpenDataLab（上海人工智能实验室）推出：
+
+- **Stage 1**：基于 doclayout-yolo 进行文档布局检测，识别标题、正文、表格、公式、图片等区域
+- **Stage 2**：表格区域用表格识别模型还原为 Markdown/HTML 表格；公式区域通过 UnimeRNet 转为 LaTeX；正文区域 OCR 后保留阅读顺序
+
+MinerU 在学术论文、研报、财报等复杂排版场景下表现突出，且完全开源可离线部署。
 
 **两阶段 vs 端到端**：
 
@@ -182,5 +192,6 @@ PDF 页面 → 渲染为图像 → 布局检测（Stage 1）→ 按区域提取�
 | Camelot | Python | 协议解析 | 表格提取专家 |
 | layoutparser | Python | 布局检测 | 深度学习布局分析 |
 | Surya | Python | 布局检测+OCR | 新一代开源方案 |
+| MinerU | Python | 两阶段方案 | 开源标杆，布局检测+表格/公式/文本提取 |
 | PaddleOCR | Python | OCR | 中文场景优秀 |
 | GPT-4o / Claude | API | VLM | 端到端文档理解 |

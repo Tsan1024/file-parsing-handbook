@@ -134,14 +134,24 @@ This is the classic two-stage paradigm in document parsing — separating "where
 
 | Stage | Goal | Methods |
 |-------|------|---------|
-| **Stage 1: Layout Detection** | Identify all element regions on the page (headings, paragraphs, tables, figures, headers, footers, formulas, etc.) with bounding boxes and types | Rule-based (pdfplumber coordinate analysis), deep learning detection models (layoutparser, DocTR, Surya), lightweight object detection (YOLO-based) |
-| **Stage 2: Regional Extraction** | For each detected region, select the best model for content extraction and structuring | Text regions → VLM or OCR; Table regions → table-specific VLM or Camelot/Tabula; Figure regions → VLM description or OCR; Formula regions → LaTeX conversion models |
+| **Stage 1: Layout Detection** | Identify all element regions on the page (headings, paragraphs, tables, figures, headers, footers, formulas, etc.) with bounding boxes and types | Rule-based (pdfplumber coordinate analysis), deep learning detection models (layoutparser, DocTR, Surya), lightweight object detection (YOLO-based), MinerU (doclayout-yolo) |
+| **Stage 2: Regional Extraction** | For each detected region, select the best model for content extraction and structuring | Text regions → VLM or OCR; Table regions → table-specific VLM or Camelot/Tabula; Figure regions → VLM description or OCR; Formula regions → LaTeX conversion models (MinerU uses UnimeRNet) |
 
 **Core pipeline**:
 
 ```
 PDF Page → Render to Image → Layout Detection (Stage 1) → Regional Extraction (Stage 2) → Structured Output
 ```
+
+
+**Representative Tool: MinerU**
+
+MinerU is the flagship open-source implementation of the two-stage paradigm, developed by OpenDataLab (Shanghai AI Laboratory):
+
+- **Stage 1**: Uses doclayout-yolo for document layout detection, identifying headings, body text, tables, formulas, and figures
+- **Stage 2**: Table regions → Markdown/HTML tables via table recognition models; Formula regions → LaTeX via UnimeRNet; Text regions → OCR with reading order preservation
+
+MinerU excels on academic papers, research reports, and financial statements, and is fully open-source with offline deployment support.
 
 **Two-Stage vs End-to-End**:
 
@@ -182,5 +192,6 @@ PDF Page → Render to Image → Layout Detection (Stage 1) → Regional Extract
 | Camelot | Python | Protocol | Table extraction specialist |
 | layoutparser | Python | Layout Detection | Deep learning layout analysis |
 | Surya | Python | Layout+OCR | Next-gen open-source solution |
+| MinerU | Python | Two-Stage | Open-source benchmark, layout detection + table/formula/text extraction |
 | PaddleOCR | Python | OCR | Excellent for Chinese scenarios |
 | GPT-4o / Claude | API | VLM | End-to-end document understanding |
